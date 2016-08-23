@@ -1,0 +1,28 @@
+<ons-page ng-controller="GETempController">
+
+    <ons-list>
+        <ons-list-item modifier="chevron" class="take-from-camera" ng-click="getDataFromApppot()">データ取得</ons-list-item>
+        <ons-list-item modifier="chevron" class="take-from-gallery" ng-click="setDataToApppot()">データ保存</ons-list-item>
+        <ons-list-item modifier="chevron" class="take-from-gallery" ng-click="updDataToApppot()">データ更新</ons-list-item>
+        <ons-list-item modifier="chevron" class="take-from-gallery" ng-click="delDataToApppot()">データ削除</ons-list-item>
+        <ons-list-item modifier="chevron" class="take-from-gallery" ng-click="freeDataFromApppot()">自由SQL（SELECTのみ）</ons-list-item>
+    </ons-list>
+    <table class="table table-striped">
+		<thead>
+			<tr>
+				<th>DATA1</th>
+				<th>DATA2</th>
+				<th>DATA3</th>
+			</tr>
+		</thead>
+		<tbody>
+        <!-- http://js.studio-kingdom.com/angularjs/ng_directive/ng_repeat -->
+            <tr x-ng-repeat="GETemp in GETemps">
+				<td>{{GETemp.DATA1}}</td>
+				<td>{{GETemp.DATA2}}</td>
+				<td>{{GETemp.DATA3}}</td>
+			</tr>
+		</tbody>
+	</table>
+</ons-page>
+ 

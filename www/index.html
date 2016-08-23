@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html ng-app="app">
+<!-- http://js.studio-kingdom.com/angularjs/ng_directive/ng_app -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <!-- 基本的なライブラリ -->
+    <script src="components/loader.js"></script>
+    <link rel="stylesshet" href="components/monaca-onsenui/js/angular/angular-csp.css">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--
+    AppPot関連
+    app.js                   JavaScriptのエントリポイント
+    config.js                AppPotサーバーへの接続設定
+    -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    
+    <!-- 直接呼び出すことはほとんど無い 
+         Authenticator.js         AppPotへの認証処理を記述　
+         LocalDBInitializer.js    ローカルDB内に指定したスキーマのテーブルを生成する処理を記述
+    -->
+    <script type="text/javascript" src="js/Authenticator.js"></script>
+    <script type="text/javascript" src="js/LocalDBInitializer.js"></script>
+    <script type="text/javascript" src="js/AppPotHelper.js"></script>
+    <script type="text/javascript" src="js/sha1.js"></script>
+    
+    <!-- ファイルアップロード関連 -->
+    <script type="text/javascript" src="js/File/File.js"></script>
+    <script type="text/javascript" src="js/File/FileContoller.js"></script>
+    
+    <!-- SQL関連 -->
+    <script type="text/javascript" src="js/SQL/GETemp.js"></script>
+    <script type="text/javascript" src="js/SQL/GETempContoller.js"></script>
+</head>
+<body>
+    <ons-tabbar var="tabbar" hide-tabs="false">
+        <ons-tabbar-item
+            icon="comment"
+            label="画像"
+            page="File.html"
+            active="true"
+            ></ons-tabbar-item>
+        <ons-tabbar-item
+            icon="gear"
+            label="SQL"
+            page="GETemp.html"
+            ></ons-tabbar-item>
+    </ons-tabbar>
+</body>
+</html>

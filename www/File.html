@@ -1,0 +1,21 @@
+<ons-page ng-controller="FileController">
+    <ons-toolbar>
+        <div class="center">画像選択</div>
+    </ons-toolbar>
+    <ons-list>
+        <ons-list-item >
+            <input type="file" name="file" width="200" multiple="multiple" accept="image/*;capture=camera"
+                onchange="angular.element(this).scope().save(this.files);"
+            />
+        </ons-list-item>
+        <ons-list-item modifier="chevron" class="take-from-gallery" ng-click="findList()">工番の現場写真を検索</ons-list-item>
+    </ons-list>
+
+    <div column-width="350">
+        <!-- http://js.studio-kingdom.com/angularjs/ng_directive/ng_repeat -->
+        <div  x-ng-repeat="photo in photos">
+            <img x-ng-src="{{photoUrl(photo.photoFileName)}}" width="330"/>
+        	<div style="text-align: center;">{{photo.photoName}}</div>
+        </div>
+    </div>
+</ons-page>
